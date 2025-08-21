@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: white !important;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    /* background-color: #041a1f !important;  (kind of olive green color)*/
+    background-color: #011014 !important;
+}
+
+#container {
+    color: white;
+    height: 100%;
+    width: 94%;
+}
+
+.search_bar {
+    background-color: #000a0c;
+    /* background-color: #011014; */
+    width: 30rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.5rem;
+}
+/* 
+nav {
+    position: sticky;
+} */
+
+#nav_list {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #000a0c; */
+    background-color: black;
+    /* margin-top: 0.1rem; */
+    /* border: 2px solid rgba(255, 255, 255, 0.334); */
+    border-radius: 0.25rem;
+    /* align-items: center !important;
+    align-self: center; */
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#nav_right_icons {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center !important;
+}
+
+#home_btn {
+    display: flex;
+    align-items: center;
+}
+
+.nav_icon {
+    cursor: pointer;
+    background-color: rgb(30, 29, 29);
+    padding: 0.25rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_icon:hover {
+    background-color: rgb(18, 18, 18);
+}
+
+.side_by_side {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+#create_button {
+    column-gap: 0.25rem;
+}
+
+#left_sidebar {
+    background-color: black;
+    width: 16rem;
+    height: fit-content;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#left_sidebar div {
+    display: flex;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+#left_sidebar div p {
+    margin: 0;
+}
+
+#left_sidebar div:hover {
+    background-color: rgb(22, 21, 21);
+}
+
+#sidebar_divider {
+    width: 100%;
+}
+
+#hero_section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards_section {
+    width: calc(100% - 17rem);
+    /* height: 100vh; */
+    min-height: 100vh;
+    background-color: black;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.each_card {
+    height: 18.5rem;
+    width: 16rem;
+    /* width: 30%; */
+    margin: 1rem;
+    border-radius: 0.5rem;
+    background-color: #011014;
+    overflow: hidden;
+}
+
+.each_card img {
+    width: 100%;
+    height: 65%;
+}
+
+.video_title {
+    font-size: small;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.likes_no {
+    font-size: small;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.views_no {
+    font-size: small;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
