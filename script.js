@@ -1,94 +1,6 @@
 
 
 const cardSection = document.querySelector(".cards_section")
-// let img = document.createElement('img')
-// let image = document.getElementById('image0')
-
-async function getUser() {
-    try {
-        let response = await fetch(API_KEY)
-        console.log(response)
-        let result =  await response.json()
-        console.log(result)
-        console.log(result.items[0].snippet.thumbnails.default.url)
-
-        console.log(result.items[0].snippet.localized.title)
-
-        console.log(result.items[0].snippet.localized.description)
-
-        console.log(result.items[0].statistics.viewCount)
-
-        console.log(result.items[0].statistics.likeCount)
-
-        // image.innerHTML=''
-
-        // WORKING CODE
-        // img.src=`${result.items[0].snippet.thumbnails.default.url}`
-        // document.body.appendChild(img)
-
-
-        // TESTING CODE
-        image.src=`${result.items[0].snippet.thumbnails.default.url}`
-
-    }
-    catch (error){
-        console.log(error, "something went wrong")
-    }
-}
-
-// getUser()
-
-// =================================================================================
-//            Fresh Logic
-
-// async function getCards() {
-//     try {
-//         let response = await fetch(API_KEY)
-//         let result = await response.json()
-//         const items = result.items
-//         let i = 0
-//         for (const item of items) {
-            
-//             card.className='each_card'
-//             let newImage = document.createElement('img')
-//             newImage.id=`cardImage${i}`
-//             newImage.src=`${item.snippet.thumbnails.default.url}`
-//             cardSection.appendChild(newImage)
-//             i += 1
-//         }
-//     } catch (error) {
-//         console.error(error)
-//         console.log('Something Went Wrong!')
-//     }
-// }
-
-// getCards()
-
-
-
-// async function getCards() {
-//     try {
-//         let response = await fetch(API_KEY)
-//         let result = await response.json()
-//         const items = result.items
-//         let i = 0
-//         for (const item of items) {
-            
-//             card.className='each_card'
-//             let newImage = document.createElement('img')
-//             newImage.id=`cardImage${i}`
-//             newImage.src=`${item.snippet.thumbnails.default.url}`
-//             cardSection.appendChild(newImage)
-//             i += 1
-//         }
-//     } catch (error) {
-//         console.error(error)
-//         console.log('Something Went Wrong!')
-//     }
-// }
-
-// getCards()
-
 
 async function getCards() {
     try {
@@ -103,9 +15,15 @@ async function getCards() {
             card.className='each_card'
             // attached a single card in card section
             cardSection.appendChild(card)
+
             // created + class name provided --- image -> title -> likes_count -> views_count
             const newImage = document.createElement('img')
             newImage.className="card_image"
+            // setting attribute videoId to open the video
+            newImage.dataset.videoId = `${item.id}`
+            
+            // open video onClick of card image
+            newImage.addEventListener('click', () => {openVideo(newImage.dataset.videoId)})
 
             const title = document.createElement('div')
             title.className='video_title'
@@ -135,7 +53,21 @@ async function getCards() {
     }
 }
 
+
 getCards()
+
+
+async function openVideo(id) {
+    // let frame = document.createElement('iframe')
+    // frame.src=`https://www.youtube.com/embed/${id}`
+    // frame.href="/video.html"
+
+    // document.body.appendChild(frame)
+
+
+    let iframe_id = document.getElementById('iframe_id')
+    iframe_id.src=`https://www.youtube.com/embed/${id}`
+}
 
 
 
