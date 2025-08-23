@@ -64,9 +64,8 @@ async function openVideo(id) {
 
     // document.body.appendChild(frame)
 
-
-    let iframe_id = document.getElementById('iframe_id')
-    iframe_id.src=`https://www.youtube.com/embed/${id}`
+    window.location.href= `video.html?id=${id}` 
+    
 }
 
 

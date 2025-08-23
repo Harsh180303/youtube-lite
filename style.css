@@ -118,12 +118,13 @@ body {
 
 .cards_section {
     width: calc(100% - 17rem);
-    min-height: 100vh;
+    height: 100vh;
     background-color: black;
     border-radius: 0.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    overflow-y: scroll;
 }
 
 .each_card {
@@ -139,13 +140,13 @@ body {
     /* background-color: #000a0c; */
     box-shadow: 10px 8px 15px #011418;
     scale: 105%;
-    transition: all;
-    transition-duration: 450ms;
+    transition: ease;
+    transition-duration: 550ms;
 }
 
 .each_card img {
     width: 100%;
-    height: 65%;
+    /* height: 65%; */
     cursor: pointer;
 }
 
@@ -167,3 +168,50 @@ body {
     padding-right: 0.5rem;
 }
 
+/* video.html page */
+
+.iframe_video {
+    height: 70vh;
+    width: 55vw;
+}
+
+.live_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.live_chat {
+    width: 33vw;
+    border-radius: 0.5rem;
+    height: 70vh;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.chat_input {
+    background-color: #000a0c !important;
+    color: white;
+}
+
+#chat_msg_box {
+    position: absolute;
+    bottom: 0%;
+}
+
+.chat_input::placeholder{
+    color: rgba(255, 255, 255, 0.303) !important;
+}
+
+.newChat {
+    display: flex;
+}
+
+#live_chat_container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; 
+}
