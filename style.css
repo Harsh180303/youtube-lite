@@ -197,8 +197,12 @@ body {
 }
 
 #chat_msg_box {
-    position: absolute;
-    bottom: 0%;
+    /* position: absolute;
+    bottom: 0%; */
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #444;
+    background: #222;
 }
 
 .chat_input::placeholder{
@@ -207,6 +211,7 @@ body {
 
 .newChat {
     display: flex;
+    column-gap: 0.5rem;
 }
 
 #live_chat_container {
@@ -214,4 +219,24 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse; 
+    padding: 1rem;
+}
+
+.chat_wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* ya jitni height tu chahta hai */
+}
+
+
+/* Description */
+
+#description {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+}
+
+#title {
+    font-size: x-large;
+    box-shadow: white;
 }

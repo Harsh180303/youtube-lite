@@ -8,6 +8,13 @@ async function getCards() {
         let result = await response.json()
         console.log(result)
         const items = result.items
+
+        console.log(items)
+        let itemsString = JSON.stringify(items)
+        localStorage.setItem('myApiData', itemsString)
+
+
+        
         let i = 0
         for (const item of items) {
             // created card
