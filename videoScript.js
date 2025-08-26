@@ -17,28 +17,50 @@ window.onload = () => {
 }
 
 async function randomChat() {
-    const continer = document.getElementById("live_chat_container")
+    const container = document.getElementById("live_chat_container")
+
+    const userNames = ["Subhanshu", "Adarsh", "Ravi", "Krishna", "Rudra"];
+    const messages = [
+        "Hello there!",
+        "How are you?",
+        "This is awesome!",
+        "Learning JavaScript",
+        "Random chat going on...",
+        "What's up?",
+        "Coding is fun!"
+    ];
+
     setInterval(() => {
+        const randomUser = userNames[Math.floor(Math.random() * userNames.length)];
+        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+
         // creating a new divison and putting username + message inside it.
         const newChat = document.createElement('div')
         newChat.className="newChat"
         const userName = document.createElement('strong')
         userName.className="userName"
-        userName.innerText="Harsh"    //testing
+        // userName.innerText="Harsh"    //testing
+        userName.innerText= randomUser + ': '
         const message = document.createElement('span')
         message.className="message"
-        message.innerText="dkfjhalk"    //testing
+        // message.innerText="dkfjhalk"    //testing
+        message.innerText= randomMsg
         newChat.appendChild(userName)
         newChat.appendChild(message)
         // attached newChat inside contianer (live_chat_container)
-        continer.prepend(newChat)
-    }, 1000)  // after every 1 sec i.e. 1000ms
+        container.prepend(newChat)
+
+        if (container.children.length > 15) {
+            container.removeChild(container.lastElementChild)
+        }
+    }, 2000)  // after every 1 sec i.e. 1000ms
 }
 
-// randomChat()
+randomChat()
 
 async function getDescription() {
     let descriptionText = document.getElementById('description')
+    let comments = document.getElementById('comment_section')
     let title = document.getElementById('title')
     let data = localStorage.getItem('myApiData')
     const storedData = JSON.parse(data)
@@ -50,11 +72,17 @@ async function getDescription() {
             // console.log("id found: ", storedData[i].id)
             const description = storedData[i].snippet.description
             const titleContent = storedData[i].snippet.title
+            const comment_count = storedData[i].statistics.commentCount
             console.log(description)
             descriptionText.innerText= description
             title.innerText = titleContent
+            comments.innerText = comment_count
         }
     }
 }
 
 getDescription()
+
+async function getComments() {
+
+}

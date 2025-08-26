@@ -225,7 +225,7 @@ body {
 .chat_wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* ya jitni height tu chahta hai */
+  height: 100vh;
 }
 
 
